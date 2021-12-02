@@ -5,8 +5,9 @@ import BookCard from "./BookCard";
 function BookList({ booksInfo }) {
   return (
     <Card.Group itemsPerRow="4" stackable>
-      {booksInfo.map((item) => (
+      {booksInfo.map((item, idx) => (
         <BookCard
+        key={idx}
           image={item.volumeInfo.imageLinks.thumbnail}
           title={item.volumeInfo.title}
           desc={item.volumeInfo.description}
